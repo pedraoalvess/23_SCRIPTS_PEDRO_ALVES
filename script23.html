@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>23 - Frutaria</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="card">
+<h2>23 - Frutaria</h2>
+    <a href="index.html">Voltar</a><br><br>
+    <input type="number" id="m" placeholder="Kg de morango" step="any">
+    <input type="number" id="ma" placeholder="Kg de maçã" step="any">
+    <button onclick="calcular()">Calcular</button>
+
+    <script>
+        function calcular() {
+            var m = Number(document.getElementById("m").value);
+            var ma = Number(document.getElementById("ma").value);
+
+            var pm = (m <= 5) ? 24.00 : 20.00;
+            var pma = (ma <= 5) ? 14.80 : 12.40;
+
+            var total = (m * pm) + (ma * pma);
+            var totalKg = m + ma;
+
+            if (totalKg > 12 || total > 180) {
+                total = total - (total * 0.10);
+                alert("Total com desconto de 10%: R$ " + total.toFixed(2));
+            } else {
+                alert("Total a pagar: R$ " + total.toFixed(2));
+            }
+        }
+    </script>
+    </div>
+</body>
+</html>

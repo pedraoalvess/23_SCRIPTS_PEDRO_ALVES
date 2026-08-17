@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>19 - Inteiro ou Decimal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="card">
+<h2>19 - Inteiro ou Decimal</h2>
+    <a href="index.html">Voltar</a><br><br>
+    <input type="number" id="n" placeholder="Digite um número" step="any">
+    <button onclick="ver()">Verificar</button>
+
+    <script>
+        function ver() {
+            var n = Number(document.getElementById("n").value);
+            if (n == Math.floor(n)) alert(n + " é INTEIRO");
+            else alert(n + " é DECIMAL");
+        }
+    </script>
+    </div>
+</body>
+</html>

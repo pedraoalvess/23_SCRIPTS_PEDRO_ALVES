@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>08 - Reajuste Salarial</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="card">
+<h2>08 - Reajuste Salarial</h2>
+    <a href="index.html">Voltar</a><br><br>
+    <input type="number" id="sal" placeholder="Salário atual" step="0.01">
+    <button onclick="calcular()">Calcular</button>
+
+    <script>
+        function calcular() {
+            var s = Number(document.getElementById("sal").value);
+            var p;
+            if (s <= 1480) p = 20;
+            else if (s <= 1900) p = 15;
+            else if (s <= 2500) p = 10;
+            else p = 5;
+            var aumento = s * p / 100;
+            var novo = s + aumento;
+            alert("Salário antes: R$ " + s.toFixed(2) +
+                  "\nPercentual: " + p + "%" +
+                  "\nValor do aumento: R$ " + aumento.toFixed(2) +
+                  "\nNovo salário: R$ " + novo.toFixed(2));
+        }
+    </script>
+    </div>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>16 - Par ou Ímpar</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="card">
+<h2>16 - Par ou Ímpar</h2>
+    <a href="index.html">Voltar</a><br><br>
+    <input type="number" id="n" placeholder="Digite um inteiro">
+    <button onclick="ver()">Verificar</button>
+
+    <script>
+        function ver() {
+            var n = Number(document.getElementById("n").value);
+            if (n % 2 == 0) alert(n + " é PAR");
+            else alert(n + " é ÍMPAR");
+        }
+    </script>
+    </div>
+</body>
+</html>

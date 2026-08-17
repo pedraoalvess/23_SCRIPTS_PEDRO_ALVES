@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>18 - Caixa Eletrônico</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="card">
+<h2>18 - Caixa Eletrônico</h2>
+    <a href="index.html">Voltar</a><br><br>
+    <input type="number" id="v" placeholder="Valor do saque (10 a 900)">
+    <button onclick="sacar()">Sacar</button>
+
+    <script>
+        function sacar() {
+            var v = Number(document.getElementById("v").value);
+            if (v < 10 || v > 900) { alert("Valor inválido (mínimo 10, máximo 900)"); return; }
+            if (v % 10 != 0) { alert("Valor deve ser múltiplo de 10"); return; }
+            var n100 = Math.floor(v / 100); v = v % 100;
+            var n50 = Math.floor(v / 50);   v = v % 50;
+            var n20 = Math.floor(v / 20);   v = v % 20;
+            var n10 = Math.floor(v / 10);
+            alert("Notas de R$ 100: " + n100 +
+                  "\nNotas de R$ 50: " + n50 +
+                  "\nNotas de R$ 20: " + n20 +
+                  "\nNotas de R$ 10: " + n10);
+        }
+    </script>
+    </div>
+</body>
+</html>

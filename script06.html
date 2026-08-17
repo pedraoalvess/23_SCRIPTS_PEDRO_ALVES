@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>06 - Ordem Decrescente</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="card">
+<h2>06 - Ordem Decrescente</h2>
+    <a href="index.html">Voltar</a><br><br>
+    <input type="number" id="a" placeholder="Número 1">
+    <input type="number" id="b" placeholder="Número 2">
+    <input type="number" id="c" placeholder="Número 3">
+    <button onclick="ordenar()">Ordenar</button>
+
+    <script>
+        function ordenar() {
+            var a = Number(document.getElementById("a").value);
+            var b = Number(document.getElementById("b").value);
+            var c = Number(document.getElementById("c").value);
+            var nums = [a, b, c];
+            nums.sort(function(x, y){ return y - x; });
+            alert("Ordem decrescente: " + nums[0] + ", " + nums[1] + ", " + nums[2]);
+        }
+    </script>
+    </div>
+</body>
+</html>

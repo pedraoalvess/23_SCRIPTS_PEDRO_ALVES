@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>04 - Trocar Variáveis</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="card">
+<h2>04 - Trocar Variáveis</h2>
+    <a href="index.html">Voltar</a><br><br>
+    <input type="number" id="a" placeholder="Valor de A">
+    <input type="number" id="b" placeholder="Valor de B">
+    <button onclick="trocar()">Trocar</button>
+
+    <script>
+        function trocar() {
+            var a = Number(document.getElementById("a").value);
+            var b = Number(document.getElementById("b").value);
+            alert("ANTES:\nA = " + a + "\nB = " + b);
+            var temp = a;
+            a = b;
+            b = temp;
+            alert("DEPOIS:\nA = " + a + "\nB = " + b);
+        }
+    </script>
+    </div>
+</body>
+</html>

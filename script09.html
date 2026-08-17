@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>09 - Folha de Pagamento</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="card">
+<h2>09 - Folha de Pagamento</h2>
+    <a href="index.html">Voltar</a><br><br>
+    <input type="number" id="hora" placeholder="Valor da hora" step="0.01">
+    <input type="number" id="qtd" placeholder="Horas trabalhadas">
+    <button onclick="calcular()">Calcular</button>
+    <pre id="resultado"></pre>
+
+    <script>
+        function calcular() {
+            var vh = Number(document.getElementById("hora").value);
+            var qh = Number(document.getElementById("qtd").value);
+            var bruto = vh * qh;
+            var ir, pIr;
+            if (bruto <= 2112) { ir = 0; pIr = 0; }
+            else if (bruto <= 2826.65) { pIr = 7.5; ir = bruto * 0.075; }
+            else if (bruto <= 3751.05) { pIr = 15; ir = bruto * 0.15; }
+            else if (bruto <= 4664.68) { pIr = 22.5; ir = bruto * 0.225; }
+            else { pIr = 27.5; ir = bruto * 0.275; }
+            var inss = bruto * 0.10;
+            var sind = bruto * 0.03;
+            var total = ir + inss + sind;
+            var liquido = bruto - total;
+            var txt = "Salário Bruto: (" + vh + "*" + qh + ") R$ " + bruto.toFixed(2) + "\n" +
+                      "IR: (" + pIr + "%) R$ " + ir.toFixed(2) + "\n" +
+                      "INSS: (10%) R$ " + inss.toFixed(2) + "\n" +
+                      "SINDICATO: (3%) R$ " + sind.toFixed(2) + "\n" +
+                      "TOTAL DE DESCONTOS: R$ " + total.toFixed(2) + "\n" +
+                      "SALÁRIO LÍQUIDO: R$ " + liquido.toFixed(2);
+            document.getElementById("resultado").innerText = txt;
+        }
+    </script>
+    </div>
+</body>
+</html>

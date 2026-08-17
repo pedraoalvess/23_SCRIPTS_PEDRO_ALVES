@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>13 - Equação 2º Grau</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="card">
+<h2>13 - Equação do 2º Grau</h2>
+    <a href="index.html">Voltar</a><br><br>
+    <input type="number" id="a" placeholder="a" step="any">
+    <input type="number" id="b" placeholder="b" step="any">
+    <input type="number" id="c" placeholder="c" step="any">
+    <button onclick="calcular()">Calcular</button>
+
+    <script>
+        function calcular() {
+            var a = Number(document.getElementById("a").value);
+            var b = Number(document.getElementById("b").value);
+            var c = Number(document.getElementById("c").value);
+            if (a == 0) { alert("Não é equação do 2º grau"); return; }
+            var delta = b * b - 4 * a * c;
+            if (delta < 0) {
+                alert("Delta negativo - sem raízes reais");
+            } else if (delta == 0) {
+                var x = -b / (2 * a);
+                alert("Raiz única: x = " + x);
+            } else {
+                var x1 = (-b + Math.sqrt(delta)) / (2 * a);
+                var x2 = (-b - Math.sqrt(delta)) / (2 * a);
+                alert("x1 = " + x1 + "\nx2 = " + x2);
+            }
+        }
+    </script>
+    </div>
+</body>
+</html>

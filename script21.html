@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>21 - Investigação do Crime</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="card">
+<h2>21 - Investigação do Crime</h2>
+    <a href="index.html">Voltar</a><br><br>
+
+    <p>Responda com "sim" ou "não":</p>
+    Telefonou para a vítima? <input type="text" id="p1"><br><br>
+    Esteve no local do crime? <input type="text" id="p2"><br><br>
+    Mora perto da vítima? <input type="text" id="p3"><br><br>
+    Devia para a vítima? <input type="text" id="p4"><br><br>
+    Já trabalhou com a vítima? <input type="text" id="p5"><br><br>
+    <button onclick="classificar()">Classificar</button>
+
+    <script>
+        function classificar() {
+            var sim = 0;
+            for (var i = 1; i <= 5; i++) {
+                var r = document.getElementById("p" + i).value.toLowerCase();
+                if (r == "sim") sim++;
+            }
+            var resultado;
+            if (sim == 2) resultado = "Suspeita";
+            else if (sim == 3 || sim == 4) resultado = "Cúmplice";
+            else if (sim == 5) resultado = "Assassino";
+            else resultado = "Inocente";
+            alert("Respostas positivas: " + sim + "\nClassificação: " + resultado);
+        }
+    </script>
+    </div>
+</body>
+</html>

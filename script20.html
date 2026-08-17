@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>20 - Calculadora Completa</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="card">
+<h2>20 - Calculadora Completa</h2>
+    <a href="index.html">Voltar</a><br><br>
+    <input type="number" id="a" placeholder="Número 1" step="any">
+    <input type="number" id="b" placeholder="Número 2" step="any">
+    <select id="op">
+        <option value="+">Somar (+)</option>
+        <option value="-">Subtrair (-)</option>
+        <option value="*">Multiplicar (*)</option>
+        <option value="/">Dividir (/)</option>
+    </select>
+    <button onclick="calcular()">Calcular</button>
+
+    <script>
+        function calcular() {
+            var a = Number(document.getElementById("a").value);
+            var b = Number(document.getElementById("b").value);
+            var op = document.getElementById("op").value;
+            var r;
+            if (op == "+") r = a + b;
+            else if (op == "-") r = a - b;
+            else if (op == "*") r = a * b;
+            else r = a / b;
+
+            var parImpar = (r % 2 == 0) ? "par" : "ímpar";
+            var posNeg = (r >= 0) ? "positivo" : "negativo";
+            var intDec = (r == Math.floor(r)) ? "inteiro" : "decimal";
+
+            alert("Resultado: " + r +
+                  "\nO número é " + parImpar +
+                  ", " + posNeg +
+                  " e " + intDec);
+        }
+    </script>
+    </div>
+</body>
+</html>

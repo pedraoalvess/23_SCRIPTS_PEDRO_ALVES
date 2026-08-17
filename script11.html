@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>11 - Conceito do Aluno</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="card">
+<h2>11 - Conceito do Aluno</h2>
+    <a href="index.html">Voltar</a><br><br>
+    <input type="number" id="n1" placeholder="Nota 1" step="0.1">
+    <input type="number" id="n2" placeholder="Nota 2" step="0.1">
+    <button onclick="calcular()">Calcular</button>
+
+    <script>
+        function calcular() {
+            var n1 = Number(document.getElementById("n1").value);
+            var n2 = Number(document.getElementById("n2").value);
+            var media = (n1 + n2) / 2;
+            var conceito;
+            if (media >= 9) conceito = "A";
+            else if (media >= 7.5) conceito = "B";
+            else if (media >= 6) conceito = "C";
+            else if (media >= 4) conceito = "D";
+            else conceito = "E";
+            var sit;
+            if (conceito == "A" || conceito == "B" || conceito == "C") sit = "APROVADO";
+            else sit = "REPROVADO";
+            alert("Nota 1: " + n1 + "\nNota 2: " + n2 +
+                  "\nMédia: " + media + "\nConceito: " + conceito + "\n" + sit);
+        }
+    </script>
+    </div>
+</body>
+</html>

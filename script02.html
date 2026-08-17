@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>02 - Média do Aluno</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="card">
+<h2>02 - Média do Aluno</h2>
+    <a href="index.html">Voltar</a><br><br>
+    <input type="number" id="n1" placeholder="Nota 1">
+    <input type="number" id="n2" placeholder="Nota 2">
+    <button onclick="calcular()">Calcular</button>
+
+    <script>
+        function calcular() {
+            var n1 = Number(document.getElementById("n1").value);
+            var n2 = Number(document.getElementById("n2").value);
+            var media = (n1 + n2) / 2;
+            if (media == 10) {
+                alert("Média: " + media + "\nAprovado com Distinção");
+            } else if (media >= 7) {
+                alert("Média: " + media + "\nAprovado");
+            } else {
+                alert("Média: " + media + "\nReprovado");
+            }
+        }
+    </script>
+    </div>
+</body>
+</html>

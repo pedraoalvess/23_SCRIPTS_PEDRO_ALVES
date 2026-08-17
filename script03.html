@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>03 - Maior de 3 Números</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="card">
+<h2>03 - Maior de 3 Números</h2>
+    <a href="index.html">Voltar</a><br><br>
+    <input type="number" id="a" placeholder="Número 1">
+    <input type="number" id="b" placeholder="Número 2">
+    <input type="number" id="c" placeholder="Número 3">
+    <button onclick="maior()">Ver Maior</button>
+
+    <script>
+        function maior() {
+            var a = Number(document.getElementById("a").value);
+            var b = Number(document.getElementById("b").value);
+            var c = Number(document.getElementById("c").value);
+            var m = a;
+            if (b > m) m = b;
+            if (c > m) m = c;
+            alert("O maior é: " + m);
+        }
+    </script>
+    </div>
+</body>
+</html>

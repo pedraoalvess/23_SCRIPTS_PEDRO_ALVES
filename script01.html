@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>01 - Vogal ou Consoante</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="card">
+<h2>01 - Vogal ou Consoante</h2>
+    <a href="index.html">Voltar</a><br><br>
+    <input type="text" id="letra" maxlength="1" placeholder="Digite uma letra">
+    <button onclick="verificar()">Verificar</button>
+
+    <script>
+        function verificar() {
+            var letra = document.getElementById("letra").value.toLowerCase();
+            if (letra == "a" || letra == "e" || letra == "i" || letra == "o" || letra == "u") {
+                alert("É VOGAL");
+            } else {
+                alert("É CONSOANTE");
+            }
+        }
+    </script>
+    </div>
+</body>
+</html>

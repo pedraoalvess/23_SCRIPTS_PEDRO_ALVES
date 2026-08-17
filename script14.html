@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>14 - Ano Bissexto</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="card">
+<h2>14 - Ano Bissexto</h2>
+    <a href="index.html">Voltar</a><br><br>
+    <input type="number" id="ano" placeholder="Digite o ano">
+    <button onclick="ver()">Verificar</button>
+
+    <script>
+        function ver() {
+            var a = Number(document.getElementById("ano").value);
+            if ((a % 4 == 0 && a % 100 != 0) || a % 400 == 0) {
+                alert(a + " é BISSEXTO");
+            } else {
+                alert(a + " NÃO é bissexto");
+            }
+        }
+    </script>
+    </div>
+</body>
+</html>

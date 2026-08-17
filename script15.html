@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>15 - Data Válida</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="card">
+<h2>15 - Data Válida</h2>
+    <a href="index.html">Voltar</a><br><br>
+    <input type="text" id="data" placeholder="dd/mm/aaaa">
+    <button onclick="ver()">Verificar</button>
+
+    <script>
+        function ver() {
+            var data = document.getElementById("data").value;
+            var partes = data.split("/");
+            if (partes.length != 3) { alert("Data inválida"); return; }
+            var d = Number(partes[0]);
+            var m = Number(partes[1]);
+            var a = Number(partes[2]);
+            if (m < 1 || m > 12) { alert("Data inválida"); return; }
+            var dias = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+            if ((a % 4 == 0 && a % 100 != 0) || a % 400 == 0) dias[1] = 29;
+            if (d < 1 || d > dias[m - 1]) { alert("Data inválida"); return; }
+            alert("Data válida!");
+        }
+    </script>
+    </div>
+</body>
+</html>

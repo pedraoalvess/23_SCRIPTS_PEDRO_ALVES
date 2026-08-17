@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>07 - Turno de Estudo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="card">
+<h2>07 - Turno de Estudo</h2>
+    <a href="index.html">Voltar</a><br><br>
+    <input type="text" id="turno" maxlength="1" placeholder="M, V ou N">
+    <button onclick="verificar()">Verificar</button>
+
+    <script>
+        function verificar() {
+            var t = document.getElementById("turno").value.toUpperCase();
+            if (t == "M") alert("Bom Dia!");
+            else if (t == "V") alert("Boa Tarde!");
+            else if (t == "N") alert("Boa Noite!");
+            else alert("Valor Inválido!");
+        }
+    </script>
+    </div>
+</body>
+</html>

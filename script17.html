@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>17 - Centenas, Dezenas e Unidades</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="card">
+<h2>17 - Centenas, Dezenas e Unidades</h2>
+    <a href="index.html">Voltar</a><br><br>
+    <input type="number" id="n" placeholder="Número menor que 1000">
+    <button onclick="ver()">Decompor</button>
+
+    <script>
+        function ver() {
+            var n = Number(document.getElementById("n").value);
+            if (n < 0 || n >= 1000) { alert("Digite um número entre 0 e 999"); return; }
+            var c = Math.floor(n / 100);
+            var d = Math.floor((n % 100) / 10);
+            var u = n % 10;
+            var partes = [];
+            if (c > 0) partes.push(c + (c == 1 ? " centena" : " centenas"));
+            if (d > 0) partes.push(d + (d == 1 ? " dezena" : " dezenas"));
+            if (u > 0) partes.push(u + (u == 1 ? " unidade" : " unidades"));
+            var texto = "";
+            if (partes.length == 0) texto = "zero";
+            else if (partes.length == 1) texto = partes[0];
+            else if (partes.length == 2) texto = partes[0] + " e " + partes[1];
+            else texto = partes[0] + ", " + partes[1] + " e " + partes[2];
+            alert(n + " = " + texto);
+        }
+    </script>
+    </div>
+</body>
+</html>

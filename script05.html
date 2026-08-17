@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>05 - Maior e Menor</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="card">
+<h2>05 - Maior e Menor</h2>
+    <a href="index.html">Voltar</a><br><br>
+    <input type="number" id="a" placeholder="Número 1">
+    <input type="number" id="b" placeholder="Número 2">
+    <input type="number" id="c" placeholder="Número 3">
+    <button onclick="ver()">Ver</button>
+
+    <script>
+        function ver() {
+            var a = Number(document.getElementById("a").value);
+            var b = Number(document.getElementById("b").value);
+            var c = Number(document.getElementById("c").value);
+            var maior = a, menor = a;
+            if (b > maior) maior = b;
+            if (c > maior) maior = c;
+            if (b < menor) menor = b;
+            if (c < menor) menor = c;
+            alert("Maior: " + maior + "\nMenor: " + menor);
+        }
+    </script>
+    </div>
+</body>
+</html>

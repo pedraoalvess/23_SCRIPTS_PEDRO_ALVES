@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>22 - Posto de Combustível</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="card">
+<h2>22 - Posto de Combustível</h2>
+    <a href="index.html">Voltar</a><br><br>
+    <input type="number" id="litros" placeholder="Litros" step="any">
+    <input type="text" id="tipo" maxlength="1" placeholder="A ou G">
+    <button onclick="calcular()">Calcular</button>
+
+    <script>
+        function calcular() {
+            var l = Number(document.getElementById("litros").value);
+            var t = document.getElementById("tipo").value.toUpperCase();
+            var preco, desc;
+            if (t == "A") {
+                preco = 4.39;
+                desc = (l <= 20) ? 0.03 : 0.05;
+            } else if (t == "G") {
+                preco = 6.79;
+                desc = (l <= 20) ? 0.04 : 0.06;
+            } else {
+                alert("Tipo inválido");
+                return;
+            }
+            var total = l * preco;
+            var desconto = total * desc;
+            var pagar = total - desconto;
+            alert("Total bruto: R$ " + total.toFixed(2) +
+                  "\nDesconto: R$ " + desconto.toFixed(2) +
+                  "\nValor a pagar: R$ " + pagar.toFixed(2));
+        }
+    </script>
+    </div>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>10 - Dia da Semana</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="card">
+<h2>10 - Dia da Semana</h2>
+    <a href="index.html">Voltar</a><br><br>
+    <input type="number" id="n" placeholder="1 a 7">
+    <button onclick="ver()">Ver Dia</button>
+
+    <script>
+        function ver() {
+            var n = Number(document.getElementById("n").value);
+            if (n == 1) alert("Domingo");
+            else if (n == 2) alert("Segunda");
+            else if (n == 3) alert("Terça");
+            else if (n == 4) alert("Quarta");
+            else if (n == 5) alert("Quinta");
+            else if (n == 6) alert("Sexta");
+            else if (n == 7) alert("Sábado");
+            else alert("Valor inválido");
+        }
+    </script>
+    </div>
+</body>
+</html>
